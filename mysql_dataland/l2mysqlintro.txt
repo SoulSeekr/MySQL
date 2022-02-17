@@ -1,0 +1,72 @@
+
+
+=> VERSION CHECK
+(Method 1 = in server)
+mysql -V
+
+(Method 2 = in mysql)
+help; (shortcut = \h)
+status; (shortcut = \s)
+
+__________________________________________
+
+=> Arithmetic Operators (Stypes)
+
+Operators			Meaning									Operators On
++ (Add)				Addition								Numberic value
+- (Subtract)		Subtraction								Numberic value
+* (Multiply)		Multiplication							Numberic value
+/ (Divide)			Division								Numberic value
+% (Modulus)			Returns remainder of a division			Numberic value
+
+
+
+Additional Operators = Syntax
+
+SELECT 10 + 2;
+SELECT "10" + 2;
+SELECT "10" + "2";
+SELECT 10+2, 20 + 30;
+
+
+Substraction Operator = Syntax
+
+SELECT 10 - 2;
+SELECT 20 - 10, 30 - 15;
+
+
+Multiplication Operator = Syntax
+
+SELECT 10 * 3;
+SELECT 5*3, 12*4;
+SEELCT "20" * "3", "100" * "4";
+
+
+Division Operator = Syntax
+
+SELECT 10 / 2;
+SELECT 2/3, 3 / 5;
+SELECT 100 / "25", "2000" / "2", 12 / 0;
+
+SELECT 20 / 3;
+SELECT 20 DIV 3;
+SELECT 5 DIV 2, -40 DIV 3, -100 DIV -7;
+SELECT 5 DIV 2, -20/5;
+
+SELECT 3DIV5; (error / sperate DIV )
+
+
+Modulus Operator = Syntax
+
+SELECT 10 % 3;
+SELECT 2%3, 3 % 5;
+SELECT 20 % "3", "100" % 5;
+
+SELECT 10 % 3;
+SELECT 10 MOD 3;
+SELECT "2345"%23;
+SELECT "2345" MOD 23;
+SELECT 70%5, 10 % 3;
+
+SELECT MOD(10,3); (function)
+

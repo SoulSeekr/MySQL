@@ -1,0 +1,73 @@
+=> SERVER LOGIN
+
+CMD
+
+username = ssh dlt@dltmyanmar.com
+		   ssh wdf6657@dltmyanmar.com
+		   ssh dlt@157.230.240.154
+password = datalandtechnology
+
+username = ssh dlt@dltmyanmar.net
+		   ssh wdf6657@dltmyanmar.net
+		   ssh dlt@137.184.248.101
+password = datalandtechnology
+
+Putty
+
+Host Name = dltmyanmar.com
+Host Name = 157.230.240.154
+
+Host Name = dltmyanmar.net
+Host Name = 137.184.248.101
+
+Username = wdf6657
+Password = datalandtechnology
+
+WINSCP
+
+Host Name = dltmyanmar.com
+Host Name = 157.230.240.154
+
+Host Name = dltmyanmar.net
+Host Name = 137.184.248.101
+
+
+Username = wdf6657
+Password = datalandtechnology
+
+COMMEND Menu > Open Putty
+
+Login as : dlt
+Password : datalandtechnology
+
+=> DATABASE LOGIN
+
+(Method 1)
+mysql -uWDF6647(username) -p
+datalandtechnology
+
+(Method 2)
+mysql -u WDF6657 -p
+datalandtechnology
+
+exit
+
+
+=> VERSION CHECK
+(Method 1 = in server)
+mysql -V
+
+(Method 2 = in mysql)
+help; (shortcut = \h)
+status; (shortcut = \s)
+
+__________________________________________
+
+=> Arithmetic Operators (Stypes)
+
+Operators			Meaning									Operators On
++ (Add)				Addition								Numberic value
+- (Subtract)		Subtraction								Numberic value
+* (Multiply)		Multiplication							Numberic value
+/ (Divide)			Division								Numberic value
+% (Modulus)			Returns remainder of a division			Numberic value

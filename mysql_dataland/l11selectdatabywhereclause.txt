@@ -1,0 +1,227 @@
+
+=> SELECT DATA BY USING WHERE CLAUSE
+NOTE: WHERE clause is not only used in SELECT record, it is also in UPDATE, DELETE .....
+
+
+Method 1 Syntax
+SELECT * FROM tablename
+WHERE condition;
+
+Method 2 Syntax
+SELECT column1, column2, .....
+FROM tablename
+WHERE condition;
+
+Operators in WHERE Clause (9 types)
+
+=   Equal         
+>	Greater than
+<	Less than
+>=	Greater than or equal
+<=	Less than or equal
+<>	Greater than or less than, Note:: Not equal = !=
+BETWEEN
+LIKE
+IN
+
+
+
+SELECT personid, firstname, city
+FROM persons
+WHERE city = "mandalay";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE city LIKE "mandalay";
+
+
+
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname = "hnin si";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname = "Hnin Si";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname = "Hnin si";
+
+
+* empty
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname = "Hnin";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname = "Hnin s";
+
+
+
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname LIKE "hnin si";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname LIKE "Hnin Si";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname LIKE "Hnin si";
+
+
+* empty
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname LIKE "Hnin";
+
+SELECT personid, firstname, city
+FROM persons
+WHERE firstname LIKE "Hnin s";
+
+___________________________________________________________________
+
+=> <> / !=
+
+SELECT * FROM persons;
+
+SELECT personid, firstname, city FROM persons
+WHERE city <> 'mandalay';
+
+SELECT personid, firstname, city FROM persons
+WHERE city != 'mandalay';
+
+SELECT personid, firstname, city FROM persons
+WHERE NOT city = 'mandalay';
+
+
+*error
+SELECT personid, firstname, city FROM persons
+WHERE NOT city 'mandalay';
+
+*error
+SELECT personid, firstname, city FROM persons
+WHERE city NOT 'mandalay';
+
+*error
+SELECT personid, firstname, city FROM persons
+WHERE NOT city NOT= 'mandalay';
+
+*error
+SELECT personid, firstname, city FROM persons
+WHERE NOT city NOT = 'mandalay';
+
+*error
+SELECT personid, firstname, city FROM persons
+WHERE NOT city !LIKE 'mandalay';
+
+=>result OK
+SELECT personid, firstname, city FROM persons
+WHERE NOT city NOT LIKE 'mandalay';
+
+SELECT personid, firstname, city FROM persons
+WHERE NOT city LIKE 'man%';
+
+SELECT personid, firstname, city FROM persons
+WHERE NOT city NOT LIKE 'man%';
+
+___________________________________________________________________
+
+=>MODULE + - * / %
+
+SELECT * FROM employees;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE age % 2 != 0;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE age%2 != 0;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE age % 2 NOT LIKE 0;
+
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE age + 1 = 18;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE age - 1 < 18;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE salary * 2 < 300000;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE salary / 2 < 100000;
+
+
+
+___________________________________________________________________
+
+=BETWEEN with AND
+
+SELECT * FROM employees;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE salary BETWEEN 200000 AND 300000;
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE salary BETWEEN 200000 AND 300000 AND city = "chin";
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE city = "chin" AND salary BETWEEN 200000 AND 300000;
+
+
+=NOT BETWEEN with AND
+
+SELECT employeeid, name, age, salary, city FROM employees
+WHERE city = "chin" AND salary NOT BETWEEN 200000 AND 300000;
+
+___________________________________________________________________
+
+=>IN
+
+SELECT * FROM employees;
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE name = "aung aung";
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE name = "aung aung" AND city = "mandalay";
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE name = "aung aung" OR name = "tar gyi" OR name = "aye aung";
+
+
+*wrong
+SELECT employeeid, name, salary, city FROM employees
+WHERE name = "aung aung" AND name = "tar gyi" AND name = "aye aung";
+
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE salary = 100000 OR salary = 200000 or salary = 300000;
+
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE IN("aung aung", "tar gyi", "aye aung");
+
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE IN("ko nyein maung");
+
+
+SELECT employeeid, name, salary, city FROM employees
+WHERE IN(100000, 200000, 300000);
+
+
+=>NOT IN
+
+SELECT employeeid,name,age,salary,city FROM employees WHERE name NOT IN("aung aung","tar gyi","aye aung");
+
+SELECT employeeid,name,age,salary,city FROM employees WHERE salary NOT IN(100000,200000,300000);
+
+___________________________________________________________________
